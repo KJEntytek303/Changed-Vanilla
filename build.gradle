@@ -91,7 +91,9 @@ dependencies {
 
     runtimeOnly("io.github.llamalad7:mixinextras-forge:0.4.1")
 
-    implementation fg.deobf("net.ltxprogrammer.changed:Changed-m${minecraft_version}-f${forge_version}:v${changed_version}")
+    implementation fg.deobf("net.ltxprogrammer.changed:Changed-m${minecraft_version}-f${forge_version}:v${changed_version}") {
+        changing = true
+    }
 
     runtimeOnly fg.deobf("curse.maven:modernfix-790626:6609555")
     runtimeOnly fg.deobf("org.embeddedt:embeddium-1.20.1:0.3.9-git.f603a93+mc1.20.1")
