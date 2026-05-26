@@ -1,7 +1,5 @@
 {
-  "entities": [
-    "changedvanilla:latex_guardian"
-  ],
+  "entities": [],
   "slots": [
     "changed:body",
     "changed:hands",
