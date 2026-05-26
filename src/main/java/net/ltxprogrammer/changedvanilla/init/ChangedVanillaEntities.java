@@ -28,6 +28,8 @@ public class ChangedVanillaEntities {
 
     public static final RegistryObject<EntityType<LatexCat>> LATEX_CAT = registerWithEgg("latex_cat", 0x161524, 0xeaeaea,
             EntityType.Builder.of(LatexCat::new, MobCategory.MONSTER).clientTrackingRange(10).sized(0.7F * 0.9F, 1.93F * 0.9F));
+    public static final RegistryObject<EntityType<LatexCreeper>> LATEX_CREEPER = registerWithEgg("latex_creeper", 0x478f4d, 0x2e5830,
+            EntityType.Builder.of(LatexCreeper::new, MobCategory.MONSTER).clientTrackingRange(10).sized(1.25F, 2.0F));
     public static final RegistryObject<EntityType<LatexFox>> LATEX_FOX = registerWithEgg("latex_fox", 0xe38f1b, 0xf2f2ea,
             EntityType.Builder.of(LatexFox::new, MobCategory.MONSTER).clientTrackingRange(10).sized(0.7F, 1.93F));
     public static final RegistryObject<EntityType<LatexFoxPartial>> LATEX_FOX_PARTIAL = registerNoEgg("latex_fox_partial", 0xe38f1b, 0xf2f2ea,
@@ -73,6 +75,8 @@ public class ChangedVanillaEntities {
     public static void registerSpawnPlacements(SpawnPlacementRegisterEvent event) {
         event.register(LATEX_CAT.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                 LatexCat::checkEntitySpawnRules, SpawnPlacementRegisterEvent.Operation.OR);
+        event.register(LATEX_CREEPER.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                LatexCreeper::checkEntitySpawnRules, SpawnPlacementRegisterEvent.Operation.OR);
         event.register(LATEX_FOX.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                 LatexFox::checkEntitySpawnRules, SpawnPlacementRegisterEvent.Operation.OR);
         /*event.register(LATEX_GHAST.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
@@ -88,6 +92,7 @@ public class ChangedVanillaEntities {
     @SubscribeEvent
     public static void registerAttributes(EntityAttributeCreationEvent event) {
         event.put(LATEX_CAT.get(), LatexCat.createLatexAttributes().build());
+        event.put(LATEX_CREEPER.get(), LatexCreeper.createLatexAttributes().build());
         event.put(LATEX_FOX.get(), LatexFox.createLatexAttributes().build());
         event.put(LATEX_FOX_PARTIAL.get(), LatexFoxPartial.createLatexAttributes().build());
         /*event.put(LATEX_GHAST.get(), LatexGhast.createLatexGhastAttributes().build());*/
