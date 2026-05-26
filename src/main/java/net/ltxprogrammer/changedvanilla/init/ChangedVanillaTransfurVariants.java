@@ -28,10 +28,10 @@ public class ChangedVanillaTransfurVariants {
             TransfurVariant.Builder.of(ChangedVanillaEntities.LATEX_FOX));
     public static final RegistryObject<TransfurVariant<LatexFoxPartial>> LATEX_FOX_PARTIAL = register("latex_fox_partial",
             TransfurVariant.Builder.of(ChangedVanillaEntities.LATEX_FOX_PARTIAL).transfurMode(TransfurMode.NONE));
-    public static final RegistryObject<TransfurVariant<LatexGhast>> LATEX_GHAST = register("latex_ghast",
-            TransfurVariant.Builder.of(ChangedVanillaEntities.LATEX_GHAST));
-    public static final RegistryObject<TransfurVariant<LatexGuardian>> LATEX_GUARDIAN = register("latex_guardian",
-            TransfurVariant.Builder.of(ChangedVanillaEntities.LATEX_GUARDIAN).gills().noLegs());
+    /*public static final RegistryObject<TransfurVariant<LatexGhast>> LATEX_GHAST = register("latex_ghast",
+            TransfurVariant.Builder.of(ChangedVanillaEntities.LATEX_GHAST));*/
+    /*public static final RegistryObject<TransfurVariant<LatexGuardian>> LATEX_GUARDIAN = register("latex_guardian",
+            TransfurVariant.Builder.of(ChangedVanillaEntities.LATEX_GUARDIAN).gills().noLegs());*/
     public static final RegistryObject<TransfurVariant<LatexOcelot>> LATEX_OCELOT = register("latex_ocelot",
             TransfurVariant.Builder.of(ChangedVanillaEntities.LATEX_OCELOT).scares(Creeper.class).nightVision().addAbility(ChangedAbilities.TOGGLE_NIGHT_VISION));
     public static final RegistryObject<TransfurVariant<LatexSkeleton>> LATEX_SKELETON = register("latex_skeleton",
@@ -48,8 +48,8 @@ public class ChangedVanillaTransfurVariants {
                     if (newEntity.getChangedEntity() instanceof LatexFox targetEntity)
                         targetEntity.setVariant(sourceEntity.getVariant());
                 })));
-        ProcessTransfur.registerMobAssimilation(EntityType.GUARDIAN, EntityAssimilationBehavior.latexAssimilation(1.2D, true,
-                TransfurDecider.simpleMobDecider(LATEX_GUARDIAN, 3.0f)));
+        /*ProcessTransfur.registerMobAssimilation(EntityType.GUARDIAN, EntityAssimilationBehavior.latexAssimilation(1.2D, true,
+                TransfurDecider.simpleMobDecider(LATEX_GUARDIAN, 3.0f)));*/
         ProcessTransfur.registerMobAssimilation(EntityType.OCELOT, EntityAssimilationBehavior.latexAssimilation(1.2D, true,
                 TransfurDecider.simpleMobDecider(LATEX_OCELOT, 3.0f)));
         ProcessTransfur.registerMobAssimilation(EntityType.SKELETON, EntityAssimilationBehavior.uniqueVariant(LATEX_SKELETON));
