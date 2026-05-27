@@ -1,5 +1,7 @@
 {
-  "entities": [],
+  "entities": [
+    "changedvanilla:latex_creeper"
+  ],
   "slots": [
     "changed:body",
     "changed:hands",

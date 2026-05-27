@@ -24,6 +24,8 @@ public class ChangedVanillaTransfurVariants {
 
     public static final RegistryObject<TransfurVariant<LatexCat>> LATEX_CAT = register("latex_cat",
             TransfurVariant.Builder.of(ChangedVanillaEntities.LATEX_CAT).scares(Creeper.class).nightVision().addAbility(ChangedAbilities.TOGGLE_NIGHT_VISION));
+    public static final RegistryObject<TransfurVariant<LatexCreeper>> LATEX_CREEPER = register("latex_creeper",
+            TransfurVariant.Builder.of(ChangedVanillaEntities.LATEX_CREEPER).quadrupedal().cameraZOffset(7.0f / 16.0f).rideable());
     public static final RegistryObject<TransfurVariant<LatexFox>> LATEX_FOX = register("latex_fox",
             TransfurVariant.Builder.of(ChangedVanillaEntities.LATEX_FOX));
     public static final RegistryObject<TransfurVariant<LatexFoxPartial>> LATEX_FOX_PARTIAL = register("latex_fox_partial",
@@ -43,6 +45,8 @@ public class ChangedVanillaTransfurVariants {
                     if (newEntity.getChangedEntity() instanceof LatexCat targetEntity)
                         targetEntity.setVariant(sourceEntity.getVariant());
                 })));
+        ProcessTransfur.registerMobAssimilation(EntityType.CREEPER, EntityAssimilationBehavior.latexAssimilation(1.2D, true,
+                TransfurDecider.simpleMobDecider(LATEX_CREEPER, 3.0f)));
         ProcessTransfur.registerMobAssimilation(EntityType.FOX, EntityAssimilationBehavior.latexAssimilation(1.2D, true,
                 TransfurDecider.simpleMobDecider(LATEX_FOX, 3.0f, (sourceEntity, newEntity) -> {
                     if (newEntity.getChangedEntity() instanceof LatexFox targetEntity)
