@@ -3,6 +3,7 @@
   "itemGroup.tab_changedvanilla_entities": "Changed-Vanilla Entitások",
 
   "entity.changedvanilla.latex_cat": "Latex macska",
+  "entity.changedvanilla.latex_creeper": "Latex creeper",
   "entity.changedvanilla.latex_fox": "Latex róka",
   "entity.changedvanilla.latex_fox_partial": "Részleges latex róka",
   "entity.changedvanilla.latex_ghast": "Latex ghast",
@@ -11,6 +12,7 @@
   "entity.changedvanilla.latex_skeleton": "Latex csontváz",
   
   "item.changedvanilla.latex_cat_spawn_egg": "Latex macskát idéző tojás",
+  "item.changedvanilla.latex_creeper_spawn_egg": "Latex creepert idéző tojás",
   "item.changedvanilla.latex_fox_spawn_egg": "Latex rókát idéző tojás",
   "item.changedvanilla.latex_ghast_spawn_egg": "Latex ghastot idéző tojás",
   "item.changedvanilla.latex_guardian_spawn_egg": "Latex őrszemet idéző tojás",
