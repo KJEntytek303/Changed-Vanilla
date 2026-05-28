@@ -18,6 +18,7 @@ public class ChangedVanillaLayerDefinitions {
         event.registerLayerDefinition(LatexGhastModel.LAYER_LOCATION, LatexGhastModel::createBodyLayer);
         event.registerLayerDefinition(LatexGuardianModel.LAYER_LOCATION, LatexGuardianModel::createBodyLayer);
         event.registerLayerDefinition(LatexSkeletonModel.LAYER_LOCATION, LatexSkeletonModel::createBodyLayer);
-        event.registerLayerDefinition(LatexSlimeModel.LAYER_LOCATION, LatexSlimeModel::createBodyLayer);
+        event.registerLayerDefinition(LatexSlimeModel.LAYER_LOCATION_INNER, LatexSlimeModel::createInnerLayer);
+        event.registerLayerDefinition(LatexSlimeModel.LAYER_LOCATION_OUTER, LatexSlimeModel::createOuterLayer);
     }
 }
