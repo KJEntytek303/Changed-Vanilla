@@ -25,6 +25,11 @@ public class LatexSlime extends ChangedEntity {
     }
 
     @Override
+    public float getDripRate(float damage) {
+        return super.getDripRate(damage) * 2.0f;
+    }
+
+    @Override
     public TransfurMode getTransfurMode() {
         return TransfurMode.REPLICATION;
     }

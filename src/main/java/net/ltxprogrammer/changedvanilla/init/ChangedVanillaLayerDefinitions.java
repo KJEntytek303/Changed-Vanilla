@@ -18,6 +18,7 @@ public class ChangedVanillaLayerDefinitions {
         event.registerLayerDefinition(LatexFoxPartialModel.LAYER_LOCATION_LATEX_SLIM, () -> LatexFoxPartialModel.createLatexLayer(true));
         event.registerLayerDefinition(LatexGhastModel.LAYER_LOCATION, LatexGhastModel::createBodyLayer);
         event.registerLayerDefinition(LatexGuardianModel.LAYER_LOCATION, LatexGuardianModel::createBodyLayer);
+        event.registerLayerDefinition(LatexSheepModel.LAYER_LOCATION, LatexSheepModel::createBodyLayer);
         event.registerLayerDefinition(LatexSkeletonModel.LAYER_LOCATION, LatexSkeletonModel::createBodyLayer);
         event.registerLayerDefinition(LatexSlimeModel.LAYER_LOCATION_INNER, LatexSlimeModel::createInnerLayer);
         event.registerLayerDefinition(LatexSlimeModel.LAYER_LOCATION_OUTER, LatexSlimeModel::createOuterLayer);
