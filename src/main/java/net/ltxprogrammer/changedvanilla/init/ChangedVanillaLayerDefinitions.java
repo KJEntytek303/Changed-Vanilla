@@ -11,6 +11,7 @@ public class ChangedVanillaLayerDefinitions {
     @SubscribeEvent
     public static void registerLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {
         event.registerLayerDefinition(LatexCatModel.LAYER_LOCATION, LatexCatModel::createBodyLayer);
+        event.registerLayerDefinition(LatexCowModel.LAYER_LOCATION, LatexCowModel::createBodyLayer);
         event.registerLayerDefinition(LatexCreeperModel.LAYER_LOCATION, LatexCreeperModel::createBodyLayer);
         event.registerLayerDefinition(LatexFoxModel.LAYER_LOCATION, LatexFoxModel::createBodyLayer);
         event.registerLayerDefinition(LatexFoxPartialModel.LAYER_LOCATION_LATEX, () -> LatexFoxPartialModel.createLatexLayer(false));

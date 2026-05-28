@@ -3,6 +3,7 @@
   "itemGroup.tab_changedvanilla_entities": "Changed-Vanilla Entities",
 
   "entity.changedvanilla.latex_cat": "Latex Cat",
+  "entity.changedvanilla.latex_cow": "Latex Cow",
   "entity.changedvanilla.latex_creeper": "Latex Creeper",
   "entity.changedvanilla.latex_fox": "Latex Fox",
   "entity.changedvanilla.latex_fox_partial": "Partial Latex Fox",
@@ -13,6 +14,7 @@
   "entity.changedvanilla.latex_slime": "Latex Slime",
 
   "item.changedvanilla.latex_cat_spawn_egg": "Latex Cat Spawn Egg",
+  "item.changedvanilla.latex_cow_spawn_egg": "Latex Cow Spawn Egg",
   "item.changedvanilla.latex_creeper_spawn_egg": "Latex Creeper Spawn Egg",
   "item.changedvanilla.latex_fox_spawn_egg": "Latex Fox Spawn Egg",
   "item.changedvanilla.latex_ghast_spawn_egg": "Latex Ghast Spawn Egg",
