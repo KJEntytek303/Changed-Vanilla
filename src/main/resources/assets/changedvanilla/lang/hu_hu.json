@@ -10,6 +10,7 @@
   "entity.changedvanilla.latex_guardian": "Latex őrszem",
   "entity.changedvanilla.latex_ocelot": "Latex ocelot",
   "entity.changedvanilla.latex_skeleton": "Latex csontváz",
+  "entity.changedvanilla.latex_slime": "Latex nyálka",
   
   "item.changedvanilla.latex_cat_spawn_egg": "Latex macskát idéző tojás",
   "item.changedvanilla.latex_creeper_spawn_egg": "Latex creepert idéző tojás",
@@ -18,6 +19,7 @@
   "item.changedvanilla.latex_guardian_spawn_egg": "Latex őrszemet idéző tojás",
   "item.changedvanilla.latex_ocelot_spawn_egg": "Latex ocelotot idéző tojás",
   "item.changedvanilla.latex_skeleton_spawn_egg": "Latex csontvázat idéző tojás",
+  "item.changedvanilla.latex_slime_spawn_egg": "Latex nyálkát idéző tojás",
 
   "changedvanilla.stasis.modify.coatcolor": "Bunda színe: %s",
   "changedvanilla.stasis.modify.coatcolor.tooltip": "Konfiguráció: Módosítja a latex lény bundájának színét"
