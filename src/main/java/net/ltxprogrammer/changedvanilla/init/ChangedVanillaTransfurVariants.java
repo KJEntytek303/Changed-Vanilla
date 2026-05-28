@@ -38,6 +38,8 @@ public class ChangedVanillaTransfurVariants {
             TransfurVariant.Builder.of(ChangedVanillaEntities.LATEX_OCELOT).scares(Creeper.class).nightVision().addAbility(ChangedAbilities.TOGGLE_NIGHT_VISION));
     public static final RegistryObject<TransfurVariant<LatexSkeleton>> LATEX_SKELETON = register("latex_skeleton",
             TransfurVariant.Builder.of(ChangedVanillaEntities.LATEX_SKELETON));
+    public static final RegistryObject<TransfurVariant<LatexSlime>> LATEX_SLIME = register("latex_slime",
+            TransfurVariant.Builder.of(ChangedVanillaEntities.LATEX_SLIME));
 
     static {
         ProcessTransfur.registerMobAssimilation(EntityType.CAT, EntityAssimilationBehavior.latexAssimilation(1.2D, true,
