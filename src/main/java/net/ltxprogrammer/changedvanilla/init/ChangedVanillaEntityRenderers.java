@@ -28,5 +28,6 @@ public class ChangedVanillaEntityRenderers {
         ChangedEntityRenderers.registerHumanoid(event, ChangedVanillaEntities.LATEX_SHEEP.get(), LatexSheepRenderer::new);
         ChangedEntityRenderers.registerHumanoid(event, ChangedVanillaEntities.LATEX_SKELETON.get(), LatexSkeletonRenderer::new);
         ChangedEntityRenderers.registerHumanoid(event, ChangedVanillaEntities.LATEX_SLIME.get(), LatexSlimeRenderer::new);
+        ChangedEntityRenderers.registerHumanoid(event, ChangedVanillaEntities.LATEX_SPIDER.get(), LatexSpiderRenderer::new);
     }
 }

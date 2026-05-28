@@ -1,6 +1,7 @@
 package net.ltxprogrammer.changedvanilla.init;
 
 import net.ltxprogrammer.changedvanilla.client.render.model.*;
+import net.ltxprogrammer.changedvanilla.client.render.model.armor.ArmorLatexSpiderModel;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -22,5 +23,8 @@ public class ChangedVanillaLayerDefinitions {
         event.registerLayerDefinition(LatexSkeletonModel.LAYER_LOCATION, LatexSkeletonModel::createBodyLayer);
         event.registerLayerDefinition(LatexSlimeModel.LAYER_LOCATION_INNER, LatexSlimeModel::createInnerLayer);
         event.registerLayerDefinition(LatexSlimeModel.LAYER_LOCATION_OUTER, LatexSlimeModel::createOuterLayer);
+        event.registerLayerDefinition(LatexSpiderModel.LAYER_LOCATION, LatexSpiderModel::createBodyLayer);
+
+        ArmorLatexSpiderModel.MODEL_SET.registerDefinitions(event::registerLayerDefinition);
     }
 }

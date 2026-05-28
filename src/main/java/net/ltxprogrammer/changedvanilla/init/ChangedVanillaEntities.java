@@ -48,6 +48,8 @@ public class ChangedVanillaEntities {
             EntityType.Builder.of(LatexSkeleton::new, MobCategory.MONSTER).clientTrackingRange(10).sized(0.7F, 1.93F));
     public static final RegistryObject<EntityType<LatexSlime>> LATEX_SLIME = registerWithEgg("latex_slime", 0x0ad500, 0x62eb03,
             EntityType.Builder.of(LatexSlime::new, MobCategory.MONSTER).clientTrackingRange(10).sized(0.7F, 1.93F));
+    public static final RegistryObject<EntityType<LatexSpider>> LATEX_SPIDER = registerWithEgg("latex_spider", 0x3b2d20, 0x3d3938,
+            EntityType.Builder.of(LatexSpider::new, MobCategory.MONSTER).clientTrackingRange(10).sized(0.7F, 1.93F));
 
     private static <T extends ChangedEntity> RegistryObject<EntityType<T>> registerNoEgg(
             String name,
@@ -99,6 +101,8 @@ public class ChangedVanillaEntities {
                 LatexSkeleton::checkEntitySpawnRules, SpawnPlacementRegisterEvent.Operation.OR);
         event.register(LATEX_SLIME.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                 LatexSlime::checkEntitySpawnRules, SpawnPlacementRegisterEvent.Operation.OR);
+        event.register(LATEX_SPIDER.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                LatexSpider::checkEntitySpawnRules, SpawnPlacementRegisterEvent.Operation.OR);
     }
 
     @SubscribeEvent
@@ -114,5 +118,6 @@ public class ChangedVanillaEntities {
         event.put(LATEX_SHEEP.get(), LatexSheep.createLatexAttributes().build());
         event.put(LATEX_SKELETON.get(), LatexSkeleton.createLatexAttributes().build());
         event.put(LATEX_SLIME.get(), LatexSlime.createLatexAttributes().build());
+        event.put(LATEX_SPIDER.get(), LatexSpider.createLatexAttributes().build());
     }
 }
