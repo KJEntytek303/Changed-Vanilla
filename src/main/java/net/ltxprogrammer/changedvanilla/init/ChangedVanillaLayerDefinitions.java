@@ -24,6 +24,7 @@ public class ChangedVanillaLayerDefinitions {
         event.registerLayerDefinition(LatexSlimeModel.LAYER_LOCATION_INNER, LatexSlimeModel::createInnerLayer);
         event.registerLayerDefinition(LatexSlimeModel.LAYER_LOCATION_OUTER, LatexSlimeModel::createOuterLayer);
         event.registerLayerDefinition(LatexSpiderModel.LAYER_LOCATION, LatexSpiderModel::createBodyLayer);
+        event.registerLayerDefinition(LatexZombieModel.LAYER_LOCATION, LatexZombieModel::createBodyLayer);
 
         ArmorLatexSpiderModel.MODEL_SET.registerDefinitions(event::registerLayerDefinition);
     }
