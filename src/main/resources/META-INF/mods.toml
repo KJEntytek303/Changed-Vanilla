@@ -5,10 +5,10 @@ issueTrackerURL="https://github.com/LtxProgrammer/Changed-Vanilla/issues" #optio
 
 [[mods]]
 modId="changedvanilla"
-version="0.1.0"
+version="1.0.0"
 displayName="Changed Vanilla"
 updateJSONURL="https://ltxprogrammer.github.io/changed-vanilla.json"
-#displayURL="https://www.curseforge.com/minecraft/mc-mods/changed-minecraft-mod"
+displayURL="https://www.curseforge.com/minecraft/mc-mods/changed-vanilla"
 logoFile="icon@400.png"
 credits='''puppetmaster13u'''
 authors="LtxProgrammer"
