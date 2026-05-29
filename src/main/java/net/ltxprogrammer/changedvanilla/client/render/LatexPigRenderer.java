@@ -20,7 +20,7 @@ public class LatexPigRenderer extends AdvancedHumanoidRenderer<LatexPig, LatexPi
         this.addLayer(new LatexParticlesLayer<>(this, getModel()));
         this.addLayer(TransfurCapeLayer.normalCape(this, context.getModelSet()));
         this.addLayer(CustomEyesLayer.builder(this, context.getModelSet()).build());
-        this.addLayer(GasMaskLayer.forSnouted(this, context.getModelSet()));
+        this.addLayer(GasMaskLayer.forLargeSnouted(this, context.getModelSet()));
     }
 
     @Override

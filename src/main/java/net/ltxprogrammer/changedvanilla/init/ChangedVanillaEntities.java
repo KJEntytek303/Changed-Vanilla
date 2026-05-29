@@ -28,6 +28,8 @@ public class ChangedVanillaEntities {
 
     public static final RegistryObject<EntityType<LatexCat>> LATEX_CAT = registerWithEgg("latex_cat", 0x161524, 0xeaeaea,
             EntityType.Builder.of(LatexCat::new, MobCategory.MONSTER).clientTrackingRange(10).sized(0.7F * 0.9F, 1.93F * 0.9F));
+    public static final RegistryObject<EntityType<LatexChicken>> LATEX_CHICKEN = registerWithEgg("latex_chicken", 0xe4e5dd, 0xe5d013,
+            EntityType.Builder.of(LatexChicken::new, MobCategory.MONSTER).clientTrackingRange(10).sized(0.7F * 0.95F, 1.93F * 0.95F));
     public static final RegistryObject<EntityType<LatexCow>> LATEX_COW = registerWithEgg("latex_cow", 0x815f46, 0x605b58,
             EntityType.Builder.of(LatexCow::new, MobCategory.MONSTER).clientTrackingRange(10).sized(0.7F, 1.93F));
     public static final RegistryObject<EntityType<LatexCreeper>> LATEX_CREEPER = registerWithEgg("latex_creeper", 0x478f4d, 0x2e5830,
@@ -87,6 +89,8 @@ public class ChangedVanillaEntities {
     public static void registerSpawnPlacements(SpawnPlacementRegisterEvent event) {
         event.register(LATEX_CAT.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                 LatexCat::checkEntitySpawnRules, SpawnPlacementRegisterEvent.Operation.OR);
+        event.register(LATEX_CHICKEN.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                LatexChicken::checkEntitySpawnRules, SpawnPlacementRegisterEvent.Operation.OR);
         event.register(LATEX_COW.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                 LatexCow::checkEntitySpawnRules, SpawnPlacementRegisterEvent.Operation.OR);
         event.register(LATEX_CREEPER.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
@@ -116,6 +120,7 @@ public class ChangedVanillaEntities {
     @SubscribeEvent
     public static void registerAttributes(EntityAttributeCreationEvent event) {
         event.put(LATEX_CAT.get(), LatexCat.createLatexAttributes().build());
+        event.put(LATEX_CHICKEN.get(), LatexChicken.createLatexAttributes().build());
         event.put(LATEX_COW.get(), LatexCow.createLatexAttributes().build());
         event.put(LATEX_CREEPER.get(), LatexCreeper.createLatexAttributes().build());
         event.put(LATEX_FOX.get(), LatexFox.createLatexAttributes().build());
