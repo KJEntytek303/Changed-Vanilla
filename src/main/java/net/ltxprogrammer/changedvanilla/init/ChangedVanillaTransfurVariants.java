@@ -40,6 +40,8 @@ public class ChangedVanillaTransfurVariants {
             TransfurVariant.Builder.of(ChangedVanillaEntities.LATEX_OCELOT).scares(Creeper.class).nightVision().addAbility(ChangedAbilities.TOGGLE_NIGHT_VISION));
     public static final RegistryObject<TransfurVariant<LatexSheep>> LATEX_SHEEP = register("latex_sheep",
             TransfurVariant.Builder.of(ChangedVanillaEntities.LATEX_SHEEP));
+    public static final RegistryObject<TransfurVariant<LatexPig>> LATEX_PIG = register("latex_pig",
+            TransfurVariant.Builder.of(ChangedVanillaEntities.LATEX_PIG));
     public static final RegistryObject<TransfurVariant<LatexSkeleton>> LATEX_SKELETON = register("latex_skeleton",
             TransfurVariant.Builder.of(ChangedVanillaEntities.LATEX_SKELETON));
     public static final RegistryObject<TransfurVariant<LatexSlime>> LATEX_SLIME = register("latex_slime",
@@ -70,6 +72,8 @@ public class ChangedVanillaTransfurVariants {
                 TransfurDecider.simpleMobDecider(LATEX_OCELOT, 3.0f)));
         ProcessTransfur.registerMobAssimilation(EntityType.SHEEP, EntityAssimilationBehavior.latexAssimilation(1.2D, true,
                 TransfurDecider.simpleMobDecider(LATEX_SHEEP, 3.0f)));
+        ProcessTransfur.registerMobAssimilation(EntityType.PIG, EntityAssimilationBehavior.latexAssimilation(1.2D, true,
+                TransfurDecider.simpleMobDecider(LATEX_PIG, 3.0f)));
         ProcessTransfur.registerMobAssimilation(EntityType.SKELETON, EntityAssimilationBehavior.uniqueVariant(LATEX_SKELETON));
         ProcessTransfur.registerMobAssimilation(EntityType.SPIDER, EntityAssimilationBehavior.latexAssimilation(1.2D, true,
                 TransfurDecider.simpleMobDecider(LATEX_SPIDER, 3.0f)));

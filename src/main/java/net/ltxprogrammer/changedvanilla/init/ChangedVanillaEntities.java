@@ -42,6 +42,8 @@ public class ChangedVanillaEntities {
             EntityType.Builder.of(LatexGuardian::new, MobCategory.MONSTER).clientTrackingRange(10).sized(0.7F, 1.58625F));*/
     public static final RegistryObject<EntityType<LatexOcelot>> LATEX_OCELOT = registerWithEgg("latex_ocelot", 0xffd573, 0xa75b21,
             EntityType.Builder.of(LatexOcelot::new, MobCategory.MONSTER).clientTrackingRange(10).sized(0.7F, 1.93F));
+    public static final RegistryObject<EntityType<LatexPig>> LATEX_PIG = registerWithEgg("latex_pig", 0xdd998e, 0xeeb298,
+            EntityType.Builder.of(LatexPig::new, MobCategory.MONSTER).clientTrackingRange(10).sized(0.7F, 1.93F));
     public static final RegistryObject<EntityType<LatexSheep>> LATEX_SHEEP = registerWithEgg("latex_sheep", 0xffeadc, 0x5c4a3e,
             EntityType.Builder.of(LatexSheep::new, MobCategory.MONSTER).clientTrackingRange(10).sized(0.7F, 1.93F));
     public static final RegistryObject<EntityType<LatexSkeleton>> LATEX_SKELETON = registerWithEgg("latex_skeleton", 0x26252a, 0xd7d7d7,
@@ -97,6 +99,8 @@ public class ChangedVanillaEntities {
                 LatexGuardian::checkEntitySpawnRules, SpawnPlacementRegisterEvent.Operation.OR);*/
         event.register(LATEX_OCELOT.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                 LatexOcelot::checkEntitySpawnRules, SpawnPlacementRegisterEvent.Operation.OR);
+        event.register(LATEX_PIG.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                LatexPig::checkEntitySpawnRules, SpawnPlacementRegisterEvent.Operation.OR);
         event.register(LATEX_SHEEP.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                 LatexSheep::checkEntitySpawnRules, SpawnPlacementRegisterEvent.Operation.OR);
         event.register(LATEX_SKELETON.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
@@ -119,6 +123,7 @@ public class ChangedVanillaEntities {
         /*event.put(LATEX_GHAST.get(), LatexGhast.createLatexGhastAttributes().build());*/
         /*event.put(LATEX_GUARDIAN.get(), LatexGuardian.createLatexAttributes().build());*/
         event.put(LATEX_OCELOT.get(), LatexOcelot.createLatexAttributes().build());
+        event.put(LATEX_PIG.get(), LatexPig.createLatexAttributes().build());
         event.put(LATEX_SHEEP.get(), LatexSheep.createLatexAttributes().build());
         event.put(LATEX_SKELETON.get(), LatexSkeleton.createLatexAttributes().build());
         event.put(LATEX_SLIME.get(), LatexSlime.createLatexAttributes().build());
