@@ -2,34 +2,48 @@ package net.ltxprogrammer.changedvanilla.client.render;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import net.ltxprogrammer.changed.client.renderer.AdvancedHumanoidRenderer;
-import net.ltxprogrammer.changed.client.renderer.layers.CustomEyesLayer;
-import net.ltxprogrammer.changed.client.renderer.layers.GasMaskLayer;
-import net.ltxprogrammer.changed.client.renderer.layers.LatexParticlesLayer;
-import net.ltxprogrammer.changed.client.renderer.layers.TransfurCapeLayer;
+import net.ltxprogrammer.changed.client.renderer.layers.*;
 import net.ltxprogrammer.changed.client.renderer.model.armor.ArmorLatexBigTailDragonModel;
 import net.ltxprogrammer.changed.entity.SpringType;
 import net.ltxprogrammer.changed.util.Color3;
 import net.ltxprogrammer.changedvanilla.ChangedVanilla;
+import net.ltxprogrammer.changedvanilla.client.render.layers.LatexSlimeOuterLayer;
 import net.ltxprogrammer.changedvanilla.client.render.model.LatexSlimeModel;
 import net.ltxprogrammer.changedvanilla.entity.LatexSlime;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.resources.ResourceLocation;
+import org.jetbrains.annotations.Nullable;
 
 public class LatexSlimeRenderer extends AdvancedHumanoidRenderer<LatexSlime, LatexSlimeModel> {
-    public static final ResourceLocation DEFAULT_SKIN_LOCATION = ChangedVanilla.modResource("textures/entity/latex_slime.png");
+    public static final ResourceLocation DEFAULT_SKIN_LOCATION_INNER = ChangedVanilla.modResource("textures/entity/latex_slime/inner.png");
+    public static final ResourceLocation DEFAULT_SKIN_LOCATION_OUTER = ChangedVanilla.modResource("textures/entity/latex_slime/outer.png");
 
     public LatexSlimeRenderer(EntityRendererProvider.Context context) {
-        super(context, new LatexSlimeModel(context.bakeLayer(LatexSlimeModel.LAYER_LOCATION)), ArmorLatexBigTailDragonModel.MODEL_SET, 0.5f);
+        super(context, new LatexSlimeModel(context.bakeLayer(LatexSlimeModel.LAYER_LOCATION_INNER)), ArmorLatexBigTailDragonModel.MODEL_SET, 0.5f);
+        this.addLayer(new LatexSlimeOuterLayer(this, new LatexSlimeModel(context.bakeLayer(LatexSlimeModel.LAYER_LOCATION_OUTER)), DEFAULT_SKIN_LOCATION_OUTER));
         this.addLayer(new LatexParticlesLayer<>(this, getModel()));
         this.addLayer(TransfurCapeLayer.normalCape(this, context.getModelSet()));
         this.addLayer(CustomEyesLayer.builder(this, context.getModelSet())
-                .withSclera(Color3.fromInt(0x5bd400)).withIris(Color3.fromInt(0x76e500)).build());
+                .withSclera(CustomEyesLayer.fixedColor(Color3.fromInt(0x5bd400), 0.5f)).withIris(CustomEyesLayer.fixedColor(Color3.fromInt(0x76e500), 0.75f)).build());
         this.addLayer(GasMaskLayer.forSnouted(this, context.getModelSet()));
     }
 
     @Override
+    protected @Nullable RenderType getRenderType(LatexSlime entity, boolean bodyVisible, boolean visibleToPlayerExclusive, boolean glowing) {
+        ResourceLocation resourcelocation = this.getTextureLocation(entity);
+        if (visibleToPlayerExclusive) {
+            return RenderType.itemEntityTranslucentCull(resourcelocation);
+        } else if (bodyVisible) {
+            return RenderType.entityCutoutNoCull(resourcelocation);
+        } else {
+            return glowing ? RenderType.outline(resourcelocation) : null;
+        }
+    }
+
+    @Override
     public ResourceLocation getTextureLocation(LatexSlime entity) {
-        return DEFAULT_SKIN_LOCATION;
+        return DEFAULT_SKIN_LOCATION_INNER;
     }
 
     @Override

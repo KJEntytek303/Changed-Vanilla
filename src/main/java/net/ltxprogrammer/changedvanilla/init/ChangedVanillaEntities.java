@@ -28,6 +28,8 @@ public class ChangedVanillaEntities {
 
     public static final RegistryObject<EntityType<LatexCat>> LATEX_CAT = registerWithEgg("latex_cat", 0x161524, 0xeaeaea,
             EntityType.Builder.of(LatexCat::new, MobCategory.MONSTER).clientTrackingRange(10).sized(0.7F * 0.9F, 1.93F * 0.9F));
+    public static final RegistryObject<EntityType<LatexCow>> LATEX_COW = registerWithEgg("latex_cow", 0x815f46, 0x605b58,
+            EntityType.Builder.of(LatexCow::new, MobCategory.MONSTER).clientTrackingRange(10).sized(0.7F, 1.93F));
     public static final RegistryObject<EntityType<LatexCreeper>> LATEX_CREEPER = registerWithEgg("latex_creeper", 0x478f4d, 0x2e5830,
             EntityType.Builder.of(LatexCreeper::new, MobCategory.MONSTER).clientTrackingRange(10).sized(1.25F, 2.0F));
     public static final RegistryObject<EntityType<LatexFox>> LATEX_FOX = registerWithEgg("latex_fox", 0xe38f1b, 0xf2f2ea,
@@ -40,10 +42,14 @@ public class ChangedVanillaEntities {
             EntityType.Builder.of(LatexGuardian::new, MobCategory.MONSTER).clientTrackingRange(10).sized(0.7F, 1.58625F));*/
     public static final RegistryObject<EntityType<LatexOcelot>> LATEX_OCELOT = registerWithEgg("latex_ocelot", 0xffd573, 0xa75b21,
             EntityType.Builder.of(LatexOcelot::new, MobCategory.MONSTER).clientTrackingRange(10).sized(0.7F, 1.93F));
+    public static final RegistryObject<EntityType<LatexSheep>> LATEX_SHEEP = registerWithEgg("latex_sheep", 0xffeadc, 0x5c4a3e,
+            EntityType.Builder.of(LatexSheep::new, MobCategory.MONSTER).clientTrackingRange(10).sized(0.7F, 1.93F));
     public static final RegistryObject<EntityType<LatexSkeleton>> LATEX_SKELETON = registerWithEgg("latex_skeleton", 0x26252a, 0xd7d7d7,
             EntityType.Builder.of(LatexSkeleton::new, MobCategory.MONSTER).clientTrackingRange(10).sized(0.7F, 1.93F));
     public static final RegistryObject<EntityType<LatexSlime>> LATEX_SLIME = registerWithEgg("latex_slime", 0x0ad500, 0x62eb03,
             EntityType.Builder.of(LatexSlime::new, MobCategory.MONSTER).clientTrackingRange(10).sized(0.7F, 1.93F));
+    public static final RegistryObject<EntityType<LatexSpider>> LATEX_SPIDER = registerWithEgg("latex_spider", 0x3b2d20, 0x3d3938,
+            EntityType.Builder.of(LatexSpider::new, MobCategory.MONSTER).clientTrackingRange(10).sized(0.7F, 1.93F));
 
     private static <T extends ChangedEntity> RegistryObject<EntityType<T>> registerNoEgg(
             String name,
@@ -77,6 +83,8 @@ public class ChangedVanillaEntities {
     public static void registerSpawnPlacements(SpawnPlacementRegisterEvent event) {
         event.register(LATEX_CAT.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                 LatexCat::checkEntitySpawnRules, SpawnPlacementRegisterEvent.Operation.OR);
+        event.register(LATEX_COW.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                LatexCow::checkEntitySpawnRules, SpawnPlacementRegisterEvent.Operation.OR);
         event.register(LATEX_CREEPER.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                 LatexCreeper::checkEntitySpawnRules, SpawnPlacementRegisterEvent.Operation.OR);
         event.register(LATEX_FOX.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
@@ -87,22 +95,29 @@ public class ChangedVanillaEntities {
                 LatexGuardian::checkEntitySpawnRules, SpawnPlacementRegisterEvent.Operation.OR);*/
         event.register(LATEX_OCELOT.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                 LatexOcelot::checkEntitySpawnRules, SpawnPlacementRegisterEvent.Operation.OR);
+        event.register(LATEX_SHEEP.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                LatexSheep::checkEntitySpawnRules, SpawnPlacementRegisterEvent.Operation.OR);
         event.register(LATEX_SKELETON.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                 LatexSkeleton::checkEntitySpawnRules, SpawnPlacementRegisterEvent.Operation.OR);
         event.register(LATEX_SLIME.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                 LatexSlime::checkEntitySpawnRules, SpawnPlacementRegisterEvent.Operation.OR);
+        event.register(LATEX_SPIDER.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                LatexSpider::checkEntitySpawnRules, SpawnPlacementRegisterEvent.Operation.OR);
     }
 
     @SubscribeEvent
     public static void registerAttributes(EntityAttributeCreationEvent event) {
         event.put(LATEX_CAT.get(), LatexCat.createLatexAttributes().build());
+        event.put(LATEX_COW.get(), LatexCow.createLatexAttributes().build());
         event.put(LATEX_CREEPER.get(), LatexCreeper.createLatexAttributes().build());
         event.put(LATEX_FOX.get(), LatexFox.createLatexAttributes().build());
         event.put(LATEX_FOX_PARTIAL.get(), LatexFoxPartial.createLatexAttributes().build());
         /*event.put(LATEX_GHAST.get(), LatexGhast.createLatexGhastAttributes().build());*/
         /*event.put(LATEX_GUARDIAN.get(), LatexGuardian.createLatexAttributes().build());*/
         event.put(LATEX_OCELOT.get(), LatexOcelot.createLatexAttributes().build());
+        event.put(LATEX_SHEEP.get(), LatexSheep.createLatexAttributes().build());
         event.put(LATEX_SKELETON.get(), LatexSkeleton.createLatexAttributes().build());
         event.put(LATEX_SLIME.get(), LatexSlime.createLatexAttributes().build());
+        event.put(LATEX_SPIDER.get(), LatexSpider.createLatexAttributes().build());
     }
 }
