@@ -14,6 +14,7 @@
   "entity.changedvanilla.latex_skeleton": "Latex Skeleton",
   "entity.changedvanilla.latex_slime": "Latex Slime",
   "entity.changedvanilla.latex_spider": "Latex Spider",
+  "entity.changedvanilla.latex_zombie": "Latex Zombie",
 
   "item.changedvanilla.latex_cat_spawn_egg": "Latex Cat Spawn Egg",
   "item.changedvanilla.latex_cow_spawn_egg": "Latex Cow Spawn Egg",
@@ -26,6 +27,7 @@
   "item.changedvanilla.latex_skeleton_spawn_egg": "Latex Skeleton Spawn Egg",
   "item.changedvanilla.latex_slime_spawn_egg": "Latex Slime Spawn Egg",
   "item.changedvanilla.latex_spider_spawn_egg": "Latex Spider Spawn Egg",
+  "item.changedvanilla.latex_zombie_spawn_egg": "Latex Zombie Spawn Egg",
 
   "changedvanilla.stasis.modify.coatcolor": "Coat Color: %s",
   "changedvanilla.stasis.modify.coatcolor.tooltip": "Config: Modifies the latex beast's coat color"

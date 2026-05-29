@@ -46,6 +46,8 @@ public class ChangedVanillaTransfurVariants {
             TransfurVariant.Builder.of(ChangedVanillaEntities.LATEX_SLIME));
     public static final RegistryObject<TransfurVariant<LatexSpider>> LATEX_SPIDER = register("latex_spider",
             TransfurVariant.Builder.of(ChangedVanillaEntities.LATEX_SPIDER).canClimb().extraHands().nightVision().addAbility(ChangedAbilities.TOGGLE_NIGHT_VISION).addAbility(ChangedAbilities.CREATE_COBWEB));
+    public static final RegistryObject<TransfurVariant<LatexZombie>> LATEX_ZOMBIE = register("latex_zombie",
+            TransfurVariant.Builder.of(ChangedVanillaEntities.LATEX_ZOMBIE));
 
     static {
         ProcessTransfur.registerMobAssimilation(EntityType.CAT, EntityAssimilationBehavior.latexAssimilation(1.2D, true,
@@ -71,5 +73,6 @@ public class ChangedVanillaTransfurVariants {
         ProcessTransfur.registerMobAssimilation(EntityType.SKELETON, EntityAssimilationBehavior.uniqueVariant(LATEX_SKELETON));
         ProcessTransfur.registerMobAssimilation(EntityType.SPIDER, EntityAssimilationBehavior.latexAssimilation(1.2D, true,
                 TransfurDecider.simpleMobDecider(LATEX_SPIDER, 3.0f)));
+        ProcessTransfur.registerMobAssimilation(EntityType.ZOMBIE, EntityAssimilationBehavior.uniqueVariant(LATEX_ZOMBIE));
     }
 }

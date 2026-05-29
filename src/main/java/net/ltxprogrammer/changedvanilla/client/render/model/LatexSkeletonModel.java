@@ -137,12 +137,12 @@ public class LatexSkeletonModel extends AdvancedHumanoidModel<LatexSkeleton> {
         return LayerDefinition.create(meshdefinition, 96, 96);
     }
 
-    public ModelPart getArm(HumanoidArm p_102852_) {
-        return p_102852_ == HumanoidArm.LEFT ? this.LeftArm : this.RightArm;
+    public ModelPart getArm(HumanoidArm side) {
+        return side == HumanoidArm.LEFT ? this.LeftArm : this.RightArm;
     }
 
-    public ModelPart getLeg(HumanoidArm p_102852_) {
-        return p_102852_ == HumanoidArm.LEFT ? this.LeftLeg : this.RightLeg;
+    public ModelPart getLeg(HumanoidArm side) {
+        return side == HumanoidArm.LEFT ? this.LeftLeg : this.RightLeg;
     }
 
     public ModelPart getHead() {
