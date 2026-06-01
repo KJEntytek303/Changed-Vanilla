@@ -1,0 +1,45 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "changedvanilla:form_latex_cat",
+      "changedvanilla:form_latex_chicken",
+      "changedvanilla:form_latex_cow",
+      "changedvanilla:form_latex_creeper",
+      "changedvanilla:form_latex_fox",
+      "changedvanilla:form_latex_ocelot",
+      "changedvanilla:form_latex_pig",
+      "changedvanilla:form_latex_sheep",
+      "changedvanilla:form_latex_skeleton",
+      "changedvanilla:form_latex_slime",
+      "changedvanilla:form_latex_spider",
+      "changedvanilla:form_latex_zombie"
+    ]
+  },
+  "criteria": {
+    "has_base": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "changed:latex_base"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "changed:form_white_latex_wolf"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_base",
+      "has_the_recipe"
+    ]
+  ]
+}

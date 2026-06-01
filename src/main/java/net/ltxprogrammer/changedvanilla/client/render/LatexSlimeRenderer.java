@@ -13,6 +13,7 @@ import net.ltxprogrammer.changedvanilla.entity.LatexSlime;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.Pose;
 import org.jetbrains.annotations.Nullable;
 
 public class LatexSlimeRenderer extends AdvancedHumanoidRenderer<LatexSlime, LatexSlimeModel> {
@@ -21,8 +22,10 @@ public class LatexSlimeRenderer extends AdvancedHumanoidRenderer<LatexSlime, Lat
 
     public LatexSlimeRenderer(EntityRendererProvider.Context context) {
         super(context, new LatexSlimeModel(context.bakeLayer(LatexSlimeModel.LAYER_LOCATION_INNER)), ArmorLatexBigTailDragonModel.MODEL_SET, 0.5f);
-        this.addLayer(new LatexSlimeOuterLayer(this, new LatexSlimeModel(context.bakeLayer(LatexSlimeModel.LAYER_LOCATION_OUTER)), DEFAULT_SKIN_LOCATION_OUTER));
-        this.addLayer(new LatexParticlesLayer<>(this, getModel()));
+        var slimeLayer = new LatexSlimeOuterLayer(this, new LatexSlimeModel(context.bakeLayer(LatexSlimeModel.LAYER_LOCATION_OUTER)), DEFAULT_SKIN_LOCATION_OUTER);
+        this.addLayer(slimeLayer);
+        this.addLayer(new LatexParticlesLayer<>(this, getModel())
+                .addModel(slimeLayer.getModel(), entity -> slimeLayer.getTexture()));
         this.addLayer(TransfurCapeLayer.normalCape(this, context.getModelSet()));
         this.addLayer(CustomEyesLayer.builder(this, context.getModelSet())
                 .withSclera(CustomEyesLayer.fixedColor(Color3.fromInt(0x5bd400), 0.5f)).withIris(CustomEyesLayer.fixedColor(Color3.fromInt(0x76e500), 0.75f)).build());
@@ -50,6 +53,10 @@ public class LatexSlimeRenderer extends AdvancedHumanoidRenderer<LatexSlime, Lat
     protected void scale(LatexSlime entity, PoseStack pose, float deltaTime) {
         super.scale(entity, pose, deltaTime);
         float spring = entity.getSimulatedSpring(SpringType.MODERATE_STRONG, SpringType.Direction.VERTICAL, deltaTime) * -0.125f;
-        pose.scale(1.0f - spring, 1.0f + spring, 1.0f - spring);
+        if (!entity.hasPose(Pose.SLEEPING)) {
+            pose.scale(1.0f - spring, 1.0f + spring, 1.0f - spring);
+        } else {
+            pose.scale(1.0f - (spring * 0.5f), 1.0f - (spring * 0.5f), 1.0f + (spring * 4.0f));
+        }
     }
 }
