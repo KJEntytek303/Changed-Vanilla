@@ -11,7 +11,7 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.common.ForgeMod;
 
-public class LatexZombie extends ChangedEntity {
+public class LatexZombie extends AbstractLatexMonster {
     public LatexZombie(EntityType<? extends ChangedEntity> type, Level level) {
         super(type, level);
     }

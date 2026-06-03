@@ -17,7 +17,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.common.ForgeMod;
 
-public class LatexSpider extends AbstractCaveEntity {
+public class LatexSpider extends AbstractLatexMonster {
     private static final EntityDataAccessor<Byte> DATA_FLAGS_ID = SynchedEntityData.defineId(LatexSpider.class, EntityDataSerializers.BYTE);
 
     public LatexSpider(EntityType<? extends ChangedEntity> type, Level level) {

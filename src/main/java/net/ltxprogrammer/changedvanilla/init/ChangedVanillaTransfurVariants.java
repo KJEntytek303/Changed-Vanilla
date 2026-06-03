@@ -63,7 +63,7 @@ public class ChangedVanillaTransfurVariants {
                 TransfurDecider.simpleMobDecider(LATEX_CHICKEN, 3.0f)));
         ProcessTransfur.registerMobAssimilation(EntityType.COW, EntityAssimilationBehavior.latexAssimilation(1.2D, true,
                 TransfurDecider.simpleMobDecider(LATEX_COW, 3.0f)));
-        ProcessTransfur.registerMobAssimilation(EntityType.CREEPER, EntityAssimilationBehavior.latexAssimilation(1.2D, true,
+        ProcessTransfur.registerMobAssimilation(EntityType.CREEPER, EntityAssimilationBehavior.latexAssimilation(1.0D, true,
                 TransfurDecider.simpleMobDecider(LATEX_CREEPER, 3.0f)));
         ProcessTransfur.registerMobAssimilation(EntityType.FOX, EntityAssimilationBehavior.latexAssimilation(1.2D, true,
                 TransfurDecider.simpleMobDecider(LATEX_FOX, 3.0f, (sourceEntity, newEntity) -> {

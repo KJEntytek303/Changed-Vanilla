@@ -18,9 +18,11 @@ public class LatexSpiderRenderer extends AdvancedHumanoidRenderer<LatexSpider, L
         this.addLayer(new LatexParticlesLayer<>(this, getModel()));
         this.addLayer(TransfurCapeLayer.normalCape(this, context.getModelSet()));
         this.addLayer(CustomEyesLayer.builder(this, context.getModelSet())
-                .withSclera(Color3.fromInt(0x9f1f12)).build());
+                .withSclera(CustomEyesLayer.fixedColorGlowing(Color3.fromInt(0x9f1f12)))
+                .withIris(CustomEyesLayer::glowingIrisColorLeft, CustomEyesLayer::glowingIrisColorRight).build());
         this.addLayer(AdditionalEyesLayer.builder(this, context.getModelSet())
-                .withSclera(Color3.fromInt(0x9f1f12)).build(ChangedVanilla.modResource("latex_spider")));
+                .withSclera(CustomEyesLayer.fixedColorGlowing(Color3.fromInt(0x9f1f12)))
+                .withIris(CustomEyesLayer::glowingIrisColorLeft, CustomEyesLayer::glowingIrisColorRight).build(ChangedVanilla.modResource("latex_spider")));
         this.addLayer(GasMaskLayer.forSnouted(this, context.getModelSet()));
     }
 

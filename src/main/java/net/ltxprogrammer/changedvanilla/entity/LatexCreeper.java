@@ -19,7 +19,7 @@ import net.minecraftforge.common.ForgeMod;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public class LatexCreeper extends ChangedEntity implements LatexTaur<LatexCreeper> {
+public class LatexCreeper extends AbstractLatexMonster implements LatexTaur<LatexCreeper> {
     public LatexCreeper(EntityType<? extends LatexCreeper> type, Level level) {
         super(type, level);
     }

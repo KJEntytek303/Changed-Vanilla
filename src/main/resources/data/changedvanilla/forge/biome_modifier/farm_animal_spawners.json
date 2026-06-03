@@ -1,0 +1,10 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": "#changedvanilla:spawn_farm_animals",
+  "spawners": [
+    { "type": "changedvanilla:latex_sheep", "weight": 2, "minCount": 1, "maxCount": 3 },
+    { "type": "changedvanilla:latex_pig", "weight": 2, "minCount": 1, "maxCount": 3 },
+    { "type": "changedvanilla:latex_chicken", "weight": 2, "minCount": 1, "maxCount": 3 },
+    { "type": "changedvanilla:latex_cow", "weight": 2, "minCount": 1, "maxCount": 3 }
+  ]
+}

@@ -10,7 +10,7 @@ import net.minecraft.world.entity.Pose;
 import net.minecraft.world.entity.ai.attributes.AttributeMap;
 import net.minecraft.world.level.Level;
 
-public class LatexSlime extends ChangedEntity {
+public class LatexSlime extends AbstractLatexMonster {
     protected float crouchImpulse = 0f;
     protected Pose lastPose = Pose.STANDING;
 

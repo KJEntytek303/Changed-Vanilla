@@ -9,6 +9,7 @@ import net.ltxprogrammer.changed.item.LatexSyringe;
 import net.ltxprogrammer.changed.item.Syringe;
 import net.ltxprogrammer.changed.util.Color3;
 import net.ltxprogrammer.changedvanilla.init.ChangedVanillaTransfurVariants;
+import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.RandomSource;
@@ -21,7 +22,9 @@ import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
 import net.minecraft.world.entity.ai.goal.RangedBowAttackGoal;
 import net.minecraft.world.entity.ai.goal.WrappedGoal;
 import net.minecraft.world.entity.monster.AbstractSkeleton;
+import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.monster.RangedAttackMob;
+import net.minecraft.world.entity.monster.Skeleton;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.entity.projectile.ProjectileUtil;
 import net.minecraft.world.item.BowItem;
@@ -37,7 +40,7 @@ import java.time.LocalDate;
 import java.time.temporal.ChronoField;
 import java.util.Objects;
 
-public class LatexSkeleton extends ChangedEntity implements RangedAttackMob {
+public class LatexSkeleton extends AbstractLatexMonster implements RangedAttackMob {
     private MeleeAttackGoal meleeGoal = null;
     private final RangedBowAttackGoal<LatexSkeleton> bowGoal = new RangedBowAttackGoal<>(this, 0.15D, 20, 15.0F);
 
